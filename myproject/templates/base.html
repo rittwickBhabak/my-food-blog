@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <!-- <link rel='stylesheet' href='bootstrap.css'> -->
+    <link rel='stylesheet' href='{{ url_for("static", filename="bootstrap.css") }}'>
+    <title>Tasty | Healthy | Fast Recipes</title>
+    {% block style %} {% endblock %}
+</head>
+
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="{{ url_for('index') }}">Recipes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+            aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('new_recipe') }}">Add Recipe</a>
+                </li>
+                
+            </ul>
+            <form class="form-inline my-2 my-md-0">
+                <input class="form-control" type="text" placeholder="Search">
+            </form>
+        </div>
+    </nav>
+    {% block body %} {% endblock %}
+    <script src='{{ url_for("static", filename="jQuery.js") }}'></script>
+    <script src='{{ url_for("static", filename="bootstrap.js") }}'></script>
+</body>
+
+</html>

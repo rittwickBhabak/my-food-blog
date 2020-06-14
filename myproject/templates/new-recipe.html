@@ -1,0 +1,245 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="col-sm-10 col-md-8 col-lg-6 offset-sm-1 offset-md-2 offset-lg-3 my-4">
+    <form>
+        <div class="form-group">
+            <label for="title">Recipe Title</label>
+            <input type="text" class="form-control" id="title">
+        </div>
+
+        <div class="d-flex justify-content-between mb-3">
+            <h2>Add Ingredients</h2>
+            <button class="btn btn-primary" id="addIngredient">Add</button>
+        </div>
+
+
+        <ul id="ingredientList">
+            <li class="d-flex justify-content-between my-2">
+                <input type="text" name="ingredient1" id="ingredient1" class="form-control col-10">
+                <button class="btn btn-danger delIng" id="delIngredient1">Del</button>
+            </li>
+        </ul>
+
+        <h2>Add Steps</h2>
+        <div id="stepsList">
+
+            <div id="step1" class="step">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-10">
+                            <input type="text" class="form-control stepTitle" id="steptitle1" placeholder="Step title">
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-danger stepDel" id="stepdel1">Delete Step</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control stepDesc" id="stepdesc1" rows="3"></textarea>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+        <button class="btn btn-block btn-warning mb-4" role="button" id="addStep">Add Step</button>
+        <h2>Add Images</h2>
+
+        <div class="imagesList">
+            <div class="row">
+                <div class="col border">
+                    <div class="form-group">
+                        <label for="image0">Thumbnail Image</label>
+                        <input type="file" name="image0" id="image0" class="form-control-file imgInp">
+                    </div>
+                </div>
+                <div class="col border">
+                    <img src="" alt="Image not uploaded" class="img-fluid m-2" id="imageDisplay0">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col border">
+                    <div class="form-group">
+                        <label for="image1">Slide Show Image</label>
+                        <input type="file" name="image1" id="image1" class="form-control-file imgInp">
+                    </div>
+                </div>
+                <div class="col border">
+                    <img src="" alt="Image not uploaded" class="img-fluid m-2" id="imageDisplay1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col border">
+                    <div class="form-group">
+                        <label for="image2">Slide Show Image</label>
+                        <input type="file" name="image2" id="image2" class="form-control-file imgInp">
+                    </div>
+                </div>
+                <div class="col border">
+                    <img src="" alt="Image not uploaded" class="img-fluid m-2" id="imageDisplay2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col border">
+                    <div class="form-group">
+                        <label for="image3">Slide Show Image</label>
+                        <input type="file" name="image3" id="image3" class="form-control-file imgInp">
+                    </div>
+                </div>
+                <div class="col border">
+                    <img src="" alt="Image not uploaded" class="img-fluid m-2" id="imageDisplay3">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col border">
+                    <div class="form-group"><label for="image4">Slide Show Image</label>
+                        <input type="file" name="image4" id="image4" class="form-control-file imgInp">
+                    </div>
+                </div>
+                <div class="col border">
+                    <img src="" alt="Image not uploaded" class="img-fluid m-2" id="imageDisplay4">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col border">
+                    <div class="form-group">
+                        <label for="image5">Slide Show Image</label><input type="file" name="image5" id="image5"
+                            class="form-control-file imgInp">
+                    </div>
+                </div>
+                <div class="col border">
+                    <img src="" alt="Image not uploaded" class="img-fluid m-2" id="imageDisplay5">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col border">
+                    <div class="form-group">
+                        <label for="image6">Slide Show Image</label>
+                        <input type="file" name="image6" id="image6" class="form-control-file imgInp">
+                    </div>
+                </div>
+                <div class="col border">
+                    <img src="" alt="Image not uploaded" class="img-fluid m-2" id="imageDisplay6">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col border">
+                    <div class="form-group">
+                        <label for="image7">Slide Show Image</label>
+                        <input type="file" name="image7" id="image7" class="form-control-file imgInp">
+                    </div>
+                </div>
+                <div class="col border">
+                    <img src="" alt="Image not uploaded" class="img-fluid m-2" id="imageDisplay7">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col border">
+                    <div class="form-group">
+                        <label for="image8">Slide Show Image</label>
+                        <input type="file" name="image8" id="image8" class="form-control-file imgInp">
+                    </div>
+                </div>
+                <div class="col border">
+                    <img src="" alt="Image not uploaded" class="img-fluid m-2" id="imageDisplay8">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col border">
+                    <div class="form-group">
+                        <label for="image9">Slide Show Image</label>
+                        <input type="file" name="image9" id="image9" class="form-control-file imgInp">
+                    </div>
+                </div>
+                <div class="col border">
+                    <img src="" alt="Image not uploaded" class="img-fluid m-2" id="imageDisplay9">
+                </div>
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<script>
+    // add ingredient 
+    let ingredientCounter = 1;
+    document.getElementById('addIngredient').addEventListener('click',function(event){
+        event.preventDefault();
+        ingredientCounter++;
+        let newIngredient = document.createElement('li');
+        newIngredient.className = "d-flex justify-content-between my-2";
+        newIngredient.innerHTML = `
+            <input type="text" name="ingredient${ingredientCounter}" id="ingredient${ingredientCounter}" class="form-control col-10">
+            <button class="btn btn-danger delIng" id="delIngredient${ingredientCounter}">Del</button>
+        `;
+        document.getElementById('ingredientList').appendChild(newIngredient);
+
+    })
+
+    // delete ingredient 
+
+
+    let counter = 2;
+    //Add step
+    document.getElementById('addStep').addEventListener('click', (event) => {
+        event.preventDefault();
+        let new_step = document.createElement('div');
+        new_step.className = "step";
+        new_step.id = 'step' + counter;
+        counter = counter + 1;
+        new_step.innerHTML = `
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-10">
+                        <input type="text" class="form-control stepTitle" id="steptitle${counter}" placeholder="Step title">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-danger stepDel" id="stepdel${counter}">Delete Step</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control stepDesc" id="stepdesc${counter}" rows="3"></textarea>
+            </div>
+            <hr>
+        `;
+        document.getElementById('stepsList').appendChild(new_step);
+    })
+
+    //Delete step or del ingredient
+    document.addEventListener('click', function (event) {
+        if (event.target && event.target.className == "btn btn-danger stepDel") {
+            event.preventDefault();
+            document.getElementById('stepsList').removeChild(event.target.parentNode.parentNode.parentNode.parentNode);
+        }
+        if(event.target && event.target.className=="btn btn-danger delIng"){
+            event.preventDefault();
+            document.getElementById('ingredientList').removeChild(event.target.parentNode);
+        }
+        
+    })
+
+    //Upload image and display
+    function readURL(input, id) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                // $('#' + id).attr('src', e.target.result);
+                console.log(id);
+                document.getElementById(id).setAttribute('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    let imageInputFields = document.getElementsByClassName('imgInp');
+    for (let item of imageInputFields) {
+
+        item.addEventListener('change', function () {
+            readURL(this, 'imageDisplay' + String(this.id.slice(5)));
+        })
+    }
+</script>
+
+{% endblock %}
