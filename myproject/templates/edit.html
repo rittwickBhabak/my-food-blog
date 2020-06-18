@@ -2,7 +2,7 @@
 
 {% block body %}
 <div class="col-sm-10 col-md-8 col-lg-6 offset-sm-1 offset-md-2 offset-lg-3 my-4">
-    <form action='/new-recipe' method="POST" enctype="multipart/form-data">
+    <form action='/edit/{{id}}' method="POST">
         {{form.hidden_tag()}}
         <div class="form-group">
             <h2>{{form.name.label}}</h2>
@@ -22,10 +22,10 @@
        
 
        
-        <h2>Add Images</h2>
+        <!-- <h2>Add Images</h2> -->
 
         <div class="imagesList">
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col border">
                     <div class="form-group">
                         <label for="image0">Thumbnail Image</label>
@@ -36,7 +36,7 @@
                     <img src="" alt="Image not uploaded" class="img-fluid m-2" id="imageDisplay0">
                 </div>
             </div>
-
+            
             <div class="row">
                 <div class="col border">
                     <div class="form-group">
@@ -134,34 +134,33 @@
                 <div class="col border">
                     <img src="" alt="Image not uploaded" class="img-fluid m-2" id="imageDisplay9">
                 </div>
-            </div>
+            </div> -->
         </div>
 
         {{form.submit(class="btn btn-primary")}}
-        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
     </form>
 </div>
 <script>
     
     //Upload image and display
-    function readURL(input, id) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                // $('#' + id).attr('src', e.target.result);
-                console.log(id);
-                document.getElementById(id).setAttribute('src', e.target.result);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    let imageInputFields = document.getElementsByClassName('imgInp');
-    for (let item of imageInputFields) {
+    // function readURL(input, id) {
+    //     if (input.files && input.files[0]) {
+    //         var reader = new FileReader();
+    //         reader.onload = function (e) {
+    //             // $('#' + id).attr('src', e.target.result);
+    //             console.log(id);
+    //             document.getElementById(id).setAttribute('src', e.target.result);
+    //         }
+    //         reader.readAsDataURL(input.files[0]);
+    //     }
+    // }
+    // let imageInputFields = document.getElementsByClassName('imgInp');
+    // for (let item of imageInputFields) {
 
-        item.addEventListener('change', function () {
-            readURL(this, 'imageDisplay' + String(this.id.slice(5)));
-        })
-    }
+    //     item.addEventListener('change', function () {
+    //         readURL(this, 'imageDisplay' + String(this.id.slice(5)));
+    //     })
+    // }
 </script>
 
 {% endblock %}
