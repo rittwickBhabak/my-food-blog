@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block body %}
+{% for tag, msg in get_flashed_messages(with_categories=True) %}
+<div class="alert alert-{{tag}}" role="alert">
+    {{msg}}
+</div>
+{% endfor %}
 <div class="col-sm-10 col-md-8 col-lg-6 offset-sm-1 offset-md-2 offset-lg-3 my-4">
     <form action='/new-recipe' method="POST" enctype="multipart/form-data">
         {{form.hidden_tag()}}
@@ -17,11 +22,11 @@
             {{form.steps(class="form-control")}}
         </div>
 
-        
 
-       
 
-       
+
+
+
         <h2>Add Images</h2>
 
         <div class="imagesList">
@@ -136,13 +141,14 @@
                 </div>
             </div>
         </div>
-
+        <br>
+        {{form.auth.label}}{{form.auth(class="form-control mb-3")}}
         {{form.submit(class="btn btn-primary")}}
         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
     </form>
 </div>
 <script>
-    
+
     //Upload image and display
     function readURL(input, id) {
         if (input.files && input.files[0]) {

@@ -16,6 +16,7 @@ class NewRecipe(FlaskForm):
     image8 = FileField('Slide Show Image')
     image9 = FileField('Slide Show Image')
     submit = SubmitField('Add recipe')
+    auth = StringField('Enter auth key')
 
 
 class EditRecipe(FlaskForm):

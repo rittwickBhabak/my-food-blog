@@ -24,6 +24,7 @@ def index():
 def new_recipe():
     form = NewRecipe()
     if form.validate_on_submit():
+        auth = form.auth.data
         name = form.name.data
         steps = form.steps.data
         ingredients = form.ingredients.data
@@ -59,11 +60,15 @@ def new_recipe():
             form.image9.data.save(os.path.join(filepath,name.replace(' ','_')+secure_filename(form.image9.data.filename)))
             images.append(name.replace(' ','_')+secure_filename(form.image9.data.filename))
         images = '|'.join(images)
-        db.session.add(Recipes(name, ingredients, steps, images))
-        db.session.commit()
-        flash('Recipe added successfully', 'success')
-        id = Recipes.query.order_by(desc(Recipes.id)).first().id
-        return redirect(url_for('recipe', id=id))
+        if(auth=='5'):
+            db.session.add(Recipes(name, ingredients, steps, images))
+            db.session.commit()
+            flash('Recipe added successfully', 'success')
+            id = Recipes.query.order_by(desc(Recipes.id)).first().id
+            return redirect(url_for('recipe', id=id))
+        else:
+            flash('Auth key wrong', 'danger')
+            return render_template('new-recipe.html', form=form)
     return render_template('new-recipe.html', form=form)
 
 @app.route('/recipe/<int:id>')
